@@ -77,6 +77,7 @@ async function watchAndExecuteScript(dirHandle: FileSystemDirectoryHandle) {
 }
 
 () => {
+    console.log('PluginReloader loaded!');
     // @ts-ignore
     if(!window.hot) {
         // @ts-ignore
