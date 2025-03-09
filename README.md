@@ -4,12 +4,12 @@ A useful tool for devs to automatically reload a plugin when it changes!
 ## Usage
 Run this in the console of Revite:
 ```js
-preloader.hot();
+hot();
 ```
 
-Then choose a folder containing the following files:
-- `manifest.json`
-- `main.js`
+This will open a folder picker, where you will then choose a folder containing the following files:
+- `manifest.json` - Your plugin manifest (see below for format)
+- `main.js` - Your plugin code
 
 > [!IMPORTANT]
 > `manifest.json` needs to have all [the basic manifest fields][m], but **do *NOT* include the `entrypoint` field**.
