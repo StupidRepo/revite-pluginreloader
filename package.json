@@ -1,0 +1,14 @@
+{
+  "name": "revite-pluginreloader",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc && node scripts/generateManifest.js"
+  },
+  "keywords": [],
+  "author": "StupidRepo",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "revolt.js": "^6.0.0-rc.24"
+  }
+}
