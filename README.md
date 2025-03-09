@@ -18,7 +18,7 @@ This will open a folder picker, where you will then choose a folder containing t
 > You could also use a `.ts` file, providing you also set up a way to compile it to a `main.js` file via use of `tsc` or something else!
 
 ## Building
-Clone the repo, and then run `yarn install` and `yarn build` to build the plugin. Then, copy the contents of `target/plugin.json` and run the following in the console of Revite:
+Clone the repo, and then run `yarn build` to build the plugin. Then, copy the contents of `target/plugin.json` and run the following in the console of Revite:
 ```js
 state.plugins.add(/* Paste the contents of plugin.json here */);
 ```

@@ -7,8 +7,5 @@
   "keywords": [],
   "author": "StupidRepo",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "revolt.js": "^6.0.0-rc.24"
-  }
+  "dependencies": {}
 }
