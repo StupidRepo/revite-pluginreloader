@@ -41,6 +41,10 @@ interface PluginAPI {
 
 async function watchAndExecuteScript(dirHandle: FileSystemDirectoryHandle) {
     const pluginAPI: PluginAPI = (window as any).state.plugins;
+    if(pluginAPI === undefined) {
+        console.error("Plugin API not found!");
+        return
+    }
 
     try {
         const manifestHandle = await dirHandle.getFileHandle("manifest.json");
@@ -63,14 +67,12 @@ async function watchAndExecuteScript(dirHandle: FileSystemDirectoryHandle) {
 
                 // Update the entrypoint and add the plugin again
                 manifest.entrypoint = await scriptFile.text();
-
                 pluginAPI.add(manifest);
             }
         }
 
-        // Poll for changes every 2 seconds
         setInterval(reloadScript, 2000);
-        console.log("Watching for updates to main.js...");
+        console.log("Watching for updates every 2 seconds!");
     } catch (err) {
         console.error("Failed to watch plugin:", err);
     }
@@ -85,10 +87,6 @@ async function watchAndExecuteScript(dirHandle: FileSystemDirectoryHandle) {
             try {
                 // @ts-ignore
                 const dirHandle = await window.showDirectoryPicker();
-
-                console.log("Selected folder:", dirHandle.name);
-
-                // Watch for plugin changes.
                 await watchAndExecuteScript(dirHandle);
             } catch (err) {
                 console.error("Error loading plugin:", err);
