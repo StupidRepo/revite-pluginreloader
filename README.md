@@ -2,7 +2,7 @@
 A useful tool for devs to automatically reload a plugin when it changes!
 
 ## Usage
-Run this in the console of Revite:
+After plugin is loaded, run this in the console of Revite:
 ```js
 hot();
 ```
